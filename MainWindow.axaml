@@ -1,0 +1,41 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:SpaceWarProject"
+        x:Class="SpaceWarProject.MainWindow"
+        Title="Space War"
+        Width="800"
+        Height="600">
+
+    <Grid>
+        <local:GameCanvas x:Name="GameCanvas" />
+
+        <!-- Game Over Screen -->
+        <Grid x:Name="GameOverScreen" 
+              IsVisible="False">
+            <Rectangle Fill="Black" Opacity="0.8"/>
+            <StackPanel HorizontalAlignment="Center" 
+                        VerticalAlignment="Center" 
+                        Spacing="20">
+                <TextBlock Text="GAME OVER" 
+                          Foreground="Red" 
+                          FontSize="48" 
+                          FontWeight="Bold" 
+                          HorizontalAlignment="Center"/>
+                <TextBlock x:Name="FinalScoreText" 
+                          Text="Final Score: 0" 
+                          Foreground="White" 
+                          FontSize="24" 
+                          HorizontalAlignment="Center"/>
+                <TextBlock x:Name="HighScoreText" 
+                          Text="High Score: 0" 
+                          Foreground="Yellow" 
+                          FontSize="24" 
+                          HorizontalAlignment="Center"/>
+                <Button x:Name="RestartButton"
+                        Content="Restart Game"
+                        HorizontalAlignment="Center"
+                        Click="RestartButton_Click"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
